@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "mc.fullname" . }}
+  annotations:
+    networking.gke.io/managed-certificates: managed-cert
+  labels:
+    {{- include "mc.labels" . | nindent 4 }}
+spec:
+  defaultBackend:
+    service:
+      name: {{ include "mc.fullname" . }}-service
+      port:
+        number: 443

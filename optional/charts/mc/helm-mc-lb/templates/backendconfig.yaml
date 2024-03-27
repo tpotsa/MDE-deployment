@@ -1,0 +1,14 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: mc-backendconfig
+spec:
+  sessionAffinity:
+    affinityType: "CLIENT_IP"
+  healthCheck:
+    checkIntervalSec: 60
+    timeoutSec: 5
+    healthyThreshold: 1
+    unhealthyThreshold: 3
+    type: HTTPS
+    requestPath: /

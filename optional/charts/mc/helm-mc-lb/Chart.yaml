@@ -1,0 +1,5 @@
+apiVersion: v2
+name: mc-lb
+description: A helm chart for MC HTTP LB
+type: application
+version: 1.0.0
